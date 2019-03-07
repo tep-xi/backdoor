@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>tEp back door</title>
+  </head>
+  {% if authed %}
+    <form method="post" action="/">
+      <input type="submit" value="Open" />
+    </form>
+  {% else %}
+    You do not have permission to view this page.
+  {% endif %}
+</html>
