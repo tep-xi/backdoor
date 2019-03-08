@@ -10,7 +10,7 @@ import gpiozero
 
 app_key = "/etc/openssl/backdoor.mit.edu.key"
 app_crt = "/etc/openssl/backdoor.mit.edu.crt"
-ca_crt = "./ca.crt"
+ca_crt = "/etc/openssl/ca.crt"
 trusted_file = "/var/lib/tepz"
 gpio_pin = 4
 open_secs = 3
