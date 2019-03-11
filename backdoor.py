@@ -4,6 +4,7 @@ import flask
 import gpiozero
 import OpenSSL
 import re
+import time
 
 trusted_file = "/var/lib/tepz"
 gpio_pin = 4
@@ -25,7 +26,9 @@ def backdoor():
     with open(trusted_file) as trusted:
         authed = (email + '\n') in trusted.readlines()
     if authed and flask.request.method == 'POST':
-        door_unlatch.blink(on_time=open_secs, n=1)
+        door_unlatch.on()
+        time.sleep(open_secs)
+        door_unlatch.off()
     return flask.render_template('index.html', authed=authed)
 
 if __name__ == '__main__':
