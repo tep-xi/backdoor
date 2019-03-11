@@ -1,10 +1,12 @@
 <html>
   <head>
-    <title>tEp back door</title>
+    <title>tEp backdoor</title>
+    <link rel="stylesheet" type="text/css" href="/static/index.css" media="screen" />
+    <link rel="preload" href="/static/button-pressed.svg" as="image" />
   </head>
   {% if authed %}
     <form method="post" action="/">
-      <input type="submit" value="Open" />
+      <button id="button" title="Open" />
     </form>
   {% else %}
     You do not have permission to view this page.

@@ -1,0 +1,15 @@
+#button:active {
+  width: 100vmin;
+  height: 100vmin;
+  border: none;
+  background: url('/static/button-pressed.svg') no-repeat;
+  background-size: contain;
+}
+
+#button {
+  width: 100vmin;
+  height: 100vmin;
+  border: none;
+  background: url('/static/button.svg') no-repeat, url('/static/button-pressed.svg');
+  background-size: contain, 0px;
+}
