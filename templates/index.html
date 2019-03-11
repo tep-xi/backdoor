@@ -4,11 +4,7 @@
     <link rel="stylesheet" type="text/css" href="/static/index.css" media="screen" />
     <link rel="preload" href="/static/button-pressed.svg" as="image" />
   </head>
-  {% if authed %}
-    <form method="post" action="/">
-      <button id="button" title="Open" />
-    </form>
-  {% else %}
-    You do not have permission to view this page.
-  {% endif %}
+  <form method="post" action="/">
+    <button id="button" title="Open" />
+  </form>
 </html>

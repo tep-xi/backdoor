@@ -25,11 +25,14 @@ def backdoor():
     # reopen the file every time to allow the list to be updated externally
     with open(trusted_file) as trusted:
         authed = (email + '\n') in trusted.readlines()
-    if authed and flask.request.method == 'POST':
-        door_unlatch.on()
-        time.sleep(open_secs)
-        door_unlatch.off()
-    return flask.render_template('index.html', authed=authed)
+    if not authed:
+        flask.abort(403)
+    else:
+        if flask.request.method == 'POST':
+            door_unlatch.on()
+            time.sleep(open_secs)
+            door_unlatch.off()
+        return flask.render_template('index.html')
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080)
