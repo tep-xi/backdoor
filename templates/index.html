@@ -4,7 +4,15 @@
     <link rel="stylesheet" type="text/css" href="/static/index.css" media="screen" />
     <link rel="preload" href="/static/button-pressed.svg" as="image" />
   </head>
-  <form method="post" action="/">
-    <button id="button" title="Open" />
+  <form method="post" action="">
+    <button id="button" title="Open"></button>
   </form>
+  {% if is_tep %}
+  <br />
+  <p>
+    Add a guest:
+    <a href="/addguest/mit">MIT</a>
+    <a href="/addguest/other">other</a>
+  </p>
+  {% endif %}
 </html>

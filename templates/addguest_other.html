@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>add a non-MIT guest</title>
+  </head>
+  <body>
+    {% if msg %}
+    <p>{{ msg }}</p>
+    {% endif %}
+    <form action="" method="post">
+      <label>
+        Username:
+        <input type="text" name="username" />
+      </label><br />
+      <label>
+        Days (max 14):
+        <input type="text" name="days" />
+      </label><br />
+      <input type="submit" value="Add/Update" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>add an MIT guest</title>
+  </head>
+  <body>
+    {% if msg %}
+    <p>{{ msg }}</p>
+    {% endif %}
+    <form action="" method="post">
+      <label>
+        Kerberos:
+        <input type="text" name="kerberos" />
+      </label><br />
+      <label>
+        Days (max 14):
+        <input type="text" name="days" />
+      </label><br />
+      <input type="submit" value="Add/Update" />
+    </form>
+  </body>
+</html>
