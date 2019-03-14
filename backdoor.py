@@ -59,7 +59,7 @@ def backdoor():
     if auth == Auth.UNAUTHED:
         flask.abort(403)
     if flask.request.method == 'POST':
-        door_unlatch = gpiozero.DigitalOutputDevice(gpio_pin)
+        door_unlatch = gpiozero.DigitalOutputDevice(gpio_pin, initial_value=None)
         door_unlatch.on()
         time.sleep(open_secs)
         door_unlatch.off()
