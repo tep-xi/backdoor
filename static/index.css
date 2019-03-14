@@ -13,3 +13,9 @@
   background: url('/static/button.svg') no-repeat, url('/static/button-pressed.svg');
   background-size: contain, 0px;
 }
+
+#button-face {
+  width: 90vmin;
+  height: 90vmin;
+  display: none;
+}
