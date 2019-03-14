@@ -47,7 +47,7 @@ def backdoor():
     if auth == Auth.UNAUTHED:
         creds = flask.request.authorization
         if not creds:
-            return flask.Response('Enter your guest credentials:', 401,
+            return flask.Response('401 Unauthorized', 401,
                     {'WWW-Authenticate': 'Basic realm="Login Required"'})
         conn = sqlite3.connect(guests_file)
         c = conn.cursor()
