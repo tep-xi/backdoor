@@ -78,8 +78,8 @@ def addguest_mit():
             days = int(form['days'])
         except ValueError:
             return flask.render_template('addguest_mit.html', msg='Error: days must be an integer')
-        days = max(days, 0)
-        days = min(days, 14)
+        days = max(days, 1)
+        days = min(days, 7)
         conn = sqlite3.connect(guests_file)
         c = conn.cursor()
         c.execute('INSERT INTO mit VALUES (?, date("now", "-1 day", "+%i days"))' % days, (email,))
@@ -101,7 +101,7 @@ def addguest_other():
         except ValueError:
             return flask.render_template('addguest_other.html', msg='Error: days must be an integer')
         days = max(days, 0)
-        days = min(days, 14)
+        days = min(days, 7)
         alphabet = string.ascii_letters + string.digits + string.punctuation
         passlen = 16 + secrets.randbelow(9)
         password = ''.join(secrets.choice(alphabet) for i in range(passlen))
